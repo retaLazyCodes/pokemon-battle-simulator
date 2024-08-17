@@ -1,0 +1,94 @@
+{
+  "batallas": [
+    {
+      "Pokemon 1": "Dragonite",
+      "Pokemon 2": "Salamence",
+      "Descripción": "Dos dragones poderosos con estadísticas similares. La batalla se definirá por la estrategia y los movimientos elegidos.",
+      "Puntos": 400
+    },
+    {
+      "Pokemon 1": "Infernape",
+      "Pokemon 2": "Greninja",
+      "Descripción": "Un duelo de velocidad y versatilidad. Infernape golpea fuerte con ataques físicos, mientras que Greninja puede usar movimientos de cobertura y tiene ventaja de tipo.",
+      "Puntos": 150
+    },
+    {
+      "Pokemon 1": "Ralts",
+      "Pokemon 2": "Beldum",
+      "Descripción": "Una batalla de potencial psíquico y metálico. Ralts puede evolucionar a Kirlia y luego a Gardevoir o Gallade, mientras que Beldum tiene un camino evolutivo único hacia Metang y finalmente al poderoso Metagross.",
+      "Puntos": 220
+    },
+    {
+      "Pokemon 1": "Duskull",
+      "Pokemon 2": "Gastly",
+      "Descripción": "¡Un golpe decisivo definirá esta batalla!  Cualquier error será fatal.",
+      "Puntos": 120
+    },
+    {
+      "Pokemon 1": "Shedinja",
+      "Pokemon 2": "Groudon",
+      "Descripción": "Shedinja tiene 1 PS, pero es inmune a ciertos ataques. Groudon, con su alto ataque, lo vencería fácilmente.",
+      "Puntos": 180
+    },
+    {
+      "Pokemon 1": "Chansey",
+      "Pokemon 2": "Machamp",
+      "Descripción": "Chansey tiene mucha defensa, pero es débil a los ataques de Machamp.",
+      "Puntos": 100
+    },
+    {
+      "Pokemon 1": "Budew",
+      "Pokemon 2": "Hoppip",
+      "Descripción": "Un enfrentamiento floral con evoluciones sorprendentes. Budew evoluciona a Roselia y luego a Roserade, mientras que Hoppip puede convertirse en Skiploom y finalmente en el elegante Jumpluff.",
+      "Puntos": 400
+    },
+    {
+      "Pokemon 1": "Gengar",
+      "Pokemon 2": "Alakazam",
+      "Descripción": "Un duelo clásico de titanes. Gengar resiste los ataques de Alakazam, pero este último puede golpear fuerte.",
+      "Puntos": 100
+    },
+    {
+      "Pokemon 1": "Tyranitar",
+      "Pokemon 2": "Metagross",
+      "Descripción": "Fuerza bruta contra resistencia y versatilidad. Tyranitar puede usar movimientos de cobertura, mientras que Metagross tiene alta defensa y puede aprovechar la debilidad de Tyranitar.",
+      "Puntos": 220
+    },
+    {
+      "Pokemon 1": "Charmander",
+      "Pokemon 2": "Squirtle",
+      "Descripción": "El fuego se encuentra con el agua en este duelo elemental. Ambos Pokémon tienen un gran potencial, con Charmander evolucionando a Charmeleon y luego a Charizard, mientras que Squirtle puede convertirse en Wartortle y finalmente en el poderoso Blastoise.",
+      "Puntos": 180
+    },
+    {
+      "Pokemon 1": "Magikarp",
+      "Pokemon 2": "Gyarados",
+      "Descripción": "El clásico chiste de Pokémon. Magikarp es muy débil, mientras que Gyarados es un Pokémon poderoso y evolucionado.",
+      "Puntos": 500
+    },
+    {
+      "Pokemon 1": "Garchomp",
+      "Pokemon 2": "Weavile",
+      "Descripción": "Weavile tiene ventaja de tipo, pero Garchomp es más poderoso en general. Una batalla de velocidad contra resistencia.",
+      "Puntos": 10
+    },
+    {
+      "Pokemon 1": "Pikachu",
+      "Pokemon 2": "Onix",
+      "Descripción": "Onix es inmune a los ataques de Pikachu, dándole una gran ventaja.",
+      "Puntos": 250
+    },
+    {
+      "Pokemon 1": "Shuckle",
+      "Pokemon 2": "Rayquaza",
+      "Descripción": "Shuckle tiene la defensa más alta del juego, pero Rayquaza es un Pokémon legendario con un ataque devastador.",
+      "Puntos": 50
+    },
+    {
+      "Pokemon 1": "Trapinch",
+      "Pokemon 2": "Nincada",
+      "Descripción": "Dos Pokémon con apariencias modestas esconden un gran poder evolutivo. Trapinch evoluciona a Vibrava y finalmente al imponente Flygon, mientras que Nincada puede convertirse en Ninjask y, de forma única, también en Shedinja.",
+      "Puntos": 500
+    }
+  ]
+}
