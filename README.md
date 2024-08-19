@@ -41,7 +41,7 @@
 #### Requisitos para ejecutar
 Tener instalado:
 
-- Python3
+- Python ^3.11
 - Git
 
 #### Cómo ejecutar
