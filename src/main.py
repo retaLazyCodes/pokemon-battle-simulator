@@ -1,7 +1,7 @@
 import json
 import os
 
-from core import Pokedex
+from core.pokedex import Pokedex
 from battle import Battle
 
 
