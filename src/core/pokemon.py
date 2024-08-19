@@ -20,14 +20,24 @@ class Pokemon:
 
     POINTS_TO_EVOLVE = 200
 
+    def can_evolve(self) -> bool:
+        if self.points >= self.POINTS_TO_EVOLVE and self.evolution_chain:
+            matching_evolution = next(
+                (evolution for evolution in self.evolution_chain if evolution[0] == self.name.lower()),
+                None
+            )
+            if matching_evolution:
+                return matching_evolution[1]
+        return False
+
     def evolve(self):
-        while self.points >= self.POINTS_TO_EVOLVE and self.evolution_chain:
-            next_evolution, can_evolve_by_level = self.evolution_chain[0]
-            if can_evolve_by_level:
-                self.name = next_evolution
-                self.points -= self.POINTS_TO_EVOLVE
-                self.evolution_chain.pop(0)
-            else:
+        for i, (next_evolution, can_evolve_by_level) in enumerate(self.evolution_chain):
+            if self.name.lower() == next_evolution:
+                if can_evolve_by_level and self.points >= self.POINTS_TO_EVOLVE:
+                    if i + 1 < len(self.evolution_chain):
+                        self.name = self.evolution_chain[i + 1][0].capitalize()
+                        self.points -= self.POINTS_TO_EVOLVE
+                        break
                 break
 
     def receive_damage(self, damage: int):
@@ -49,8 +59,9 @@ class Pokemon:
 
     def gain_experience(self, points: int):
         self.points += points
-        if self.points >= self.POINTS_TO_EVOLVE:
-            self.evolve()
+
+    def get_name(self):
+        return self.name
 
     def __str__(self):
         return f"""

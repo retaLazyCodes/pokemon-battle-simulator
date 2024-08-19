@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from typing import Dict, List
 
+from . import Pokemon
+
 
 class Pokedex:
     """A class for interacting with Pokémon data through the PokeAPI."""
@@ -25,15 +27,15 @@ class Pokedex:
                 type_info["type"]["name"].capitalize() for type_info in data["types"]
             ]
             evolution_chain = Pokedex.get_evolution_chain(name.lower())
-            return {
-                "name": name.capitalize(),
-                "hp": stats["hp"],
-                "attack": stats["attack"],
-                "defense": stats["defense"],
-                "speed": stats["speed"],
-                "types": types,
-                "evolution_chain": evolution_chain,
-            }
+            return Pokemon(
+                name=name.capitalize(),
+                hp=stats["hp"],
+                attack=stats["attack"],
+                defense=stats["defense"],
+                speed=stats["speed"],
+                types=types,
+                evolution_chain=evolution_chain,
+            )
         else:
             raise ValueError(f"Error al obtener información de {name}")
 
@@ -60,18 +62,13 @@ class Pokedex:
             return evo_chain
 
         infocards = evo_div.find_all("div", class_="infocard")
-        arrows = evo_div.find_all("span", class_="infocard-arrow")
 
         for index, infocard in enumerate(infocards):
             name_tag = infocard.find("a", class_="ent-name")
             pokemon_name = name_tag.text.lower()
 
-            evolves_by_level = False
-            if index < len(arrows):
-                level_info = arrows[index].find("small")
-                if level_info and "level" in level_info.text.lower():
-                    evolves_by_level = True
+            can_evolve = True if index < len(infocards) - 1 else False
 
-            evo_chain.append((pokemon_name, evolves_by_level))
+            evo_chain.append((pokemon_name, can_evolve))
 
         return evo_chain

@@ -143,7 +143,7 @@ pokemon_data = [
         "defense": 35,
         "speed": 55,
         "types": ["Grass", "Poison"],
-        "evolution_chain": [("budew", False), ("roselia", False), ("roserade", False)],
+        "evolution_chain": [("budew", True), ("roselia", True), ("roserade", False)],
     },
     {
         "name": "Hoppip",
@@ -170,7 +170,7 @@ pokemon_data = [
         "defense": 45,
         "speed": 120,
         "types": ["Psychic"],
-        "evolution_chain": [("abra", True), ("kadabra", False), ("alakazam", False)],
+        "evolution_chain": [("abra", True), ("kadabra", True), ("alakazam", False)],
     },
     {
         "name": "Tyranitar",
@@ -254,7 +254,7 @@ pokemon_data = [
         "defense": 65,
         "speed": 125,
         "types": ["Dark", "Ice"],
-        "evolution_chain": [("sneasel", False), ("weavile", False)],
+        "evolution_chain": [("sneasel", True), ("weavile", False)],
     },
     {
         "name": "Pikachu",
@@ -263,7 +263,7 @@ pokemon_data = [
         "defense": 40,
         "speed": 90,
         "types": ["Electric"],
-        "evolution_chain": [("pichu", False), ("pikachu", False), ("raichu", False)],
+        "evolution_chain": [("pichu", True), ("pikachu", True), ("raichu", False)],
     },
     {
         "name": "Onix",
@@ -272,7 +272,7 @@ pokemon_data = [
         "defense": 160,
         "speed": 70,
         "types": ["Rock", "Ground"],
-        "evolution_chain": [("onix", False), ("steelix", False)],
+        "evolution_chain": [("onix", True), ("steelix", False)],
     },
     {
         "name": "Shuckle",
@@ -311,7 +311,6 @@ pokemon_data = [
         "evolution_chain": [
             ("nincada", True),
             ("ninjask", True),
-            ("ninjask", False),
             ("shedinja", False),
         ],
     },
@@ -336,7 +335,7 @@ def create_pokemon_instances(pokemon_data):
 
 def battle_pokemon(pokemon1, pokemon2):
     battle = Battle(pokemon1, pokemon2)
-    battle.start_battle()
+    battle.start_battle(600)
 
 
 pokemons = create_pokemon_instances(pokemon_data)
@@ -348,6 +347,4 @@ for i in range(0, len(pokemons), 2):
     if pokemon2:
         print(f"Battle between {pokemon1.name} and {pokemon2.name}:")
         battle_pokemon(pokemon1, pokemon2)
-        print(pokemon1)
-        print(pokemon2)
         print()

@@ -21,7 +21,15 @@ class Battle:
         print(f"{attacker.name} attacks {defender.name} for {damage} damage!")
         print(f"{defender.name} has {defender.hp} HP remaining.")
 
-    def start_battle(self):
+    def check_evolution(self, pokemon: Pokemon, points: int):
+        pokemon.gain_experience(points)
+        while pokemon.can_evolve():
+            pokemon_name = pokemon.get_name()
+            print(f"What? {pokemon_name} is evolving...")
+            pokemon.evolve()
+            print(f"{pokemon_name} evolved into {pokemon.name}!")
+
+    def start_battle(self, points: int):
         print("Battle begins!")
         attacker, defender = self.decide_first_attacker()
 
@@ -29,13 +37,15 @@ class Battle:
         if defender.hp > 0:
             self.perform_attack(defender, attacker)
 
-        if self.pokemon1.hp > 0 and self.pokemon2.hp <= 0:
-            print(f"{self.pokemon1.name} wins!")
-        elif self.pokemon2.hp > 0 and self.pokemon1.hp <= 0:
-            print(f"{self.pokemon2.name} wins!")
-        elif self.pokemon1.hp > self.pokemon2.hp:
-            print(f"{self.pokemon1.name} wins by having more HP!")
-        elif self.pokemon2.hp > self.pokemon1.hp:
-            print(f"{self.pokemon2.name} wins by having more HP!")
+        if (self.pokemon1.hp > 0 and self.pokemon2.hp <= 0) or self.pokemon1.hp > self.pokemon2.hp:
+            winner = self.pokemon1
+        elif (self.pokemon2.hp > 0 and self.pokemon1.hp <= 0) or self.pokemon2.hp > self.pokemon1.hp:
+            winner = self.pokemon2
+        else:
+            winner = None
+
+        if winner:
+            print(f"{winner.name} wins!")
+            self.check_evolution(winner, points)
         else:
             print("It's a draw!")
