@@ -23,6 +23,7 @@ class Battle:
 
     def check_evolution(self, pokemon: Pokemon, points: int):
         pokemon.gain_experience(points)
+        print(f"{pokemon.name} gained {points} experience points!")
         while pokemon.can_evolve():
             pokemon_name = pokemon.get_name()
             print(f"What? {pokemon_name} is evolving...")
