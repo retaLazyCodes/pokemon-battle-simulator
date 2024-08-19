@@ -1,0 +1,18 @@
+- Para obtener la cadena evolutiva de cada pokemon se scrapea la web https://pokemondb.net.
+
+- Se obtiene también la velocidad de los pokemon. Esto es útil para saber qué pokemon golpea primero. Si ambos pokemon tienen la misma velocidad el orden se decide al azar.
+
+- Si en el primer movimiento los HP del pokemon rival bajan a 0 se termina el combate.
+
+- Si al final del turno ambos pokemon tienen la misma cantidad de HP es empate.
+
+- No se tienen en cuenta movimientos de los pokemon (categoría, tipo, potencia, etc). Los pokemon golpean usando su tipo y su ataque fisico. Tampoco se tiene en cuenta ataque especial y def especial.
+
+- No se tienen en cuenta las habilidades de los pokemon, por lo cual Shedinja deja de ser inmune a ataques de tierra de Groudon. Sin embargo, si se tienen en cuenta las inmunidades de tipos, por lo cual Onix sigue siendo inmune contra ataques electricos.
+
+- Con la formula del cálculo de daño dada, puede ocurrir que si el pokemon atacante tiene poco ataque y el pokemon defensor tiene mucha defensa, el daño a producir sea negativo. En esos casos el daño minimo producido siempre es 1, siempre y cuando el pokemon defensor no sea inmune a dicho ataque, en ese caso el daño es 0.
+
+- El daño máximo causado puede ser x4 si por ejemplo un tipo hielo ataca a un dragón/tierra.
+
+- Se ignoran las condiciones de evolución de los pokemon.
+
